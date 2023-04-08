@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS FLEX</title>
+	<link href='https://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet'>
+	<style>
+
+		/* commonly used for containers:
+	`	display: flex; -> turns on flex
+		flex-direction: row or column; -> sets orientation
+		justify-content: ; -> align content on x when in a row and y in a column
+		align-items: ; -> align content on y when in a row and x in a column
+		flex-wrap: wrap;
+
+		commonly used for items:
+		flex-items:;
+		flex-grow:;
+		align-self:;
+
+		GO TO CSS-TRICKS.COM FOR MORE INFO
+		*/
+		html, body {
+    		margin: 0;
+    		padding: 0;
+		}
+
+		.flex_container{
+			display: flex;
+			flex-direction: row;
+			height: 10vh; /*viewport height - aka 100% of the window*/
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap; /*helps with different screen sizes*/
+			background-color: #FFE4F2;
+			width: 100%;
+		}
+
+		.title{
+			margin-left: 1%;
+			font-size: 28px;
+			font-family: 'Parisienne';
+		}
+
+		.searchbar{
+			border: solid 1px black;
+			height: 60%;
+			width: 40%;
+			padding-left: 1%;
+			background-color: white;
+		}
+
+		.searchicon{
+			height: 25px;
+			width: 25px;
+			margin-top: 5px;
+			margin-right: 10px;
+			float: right;
+		}		
+
+		.icons{
+			display: flex;
+			flex-direction: row;
+			float: right;
+			margin-right: 20%;
+		}
+
+		.home{
+			margin-top: 5px;
+			margin-right: 25px;
+
+		}
+
+		.user{
+			margin-top: 5px;
+			margin-right: 25px;
+
+		}
+
+		.cart{
+			margin-top: 5px;
+
+		}
+
+		.dimensions{
+			height: 20px;
+			width: 20px;
+		}
+		
+		.flex_item{
+			border:solid 1px pink;
+
+			flex-grow: 1;
+
+			display: flex;
+			flex-direction: row;
+
+			height: 60px;
+		}
+
+		.header-body{
+			width: 100vw;
+			display: flex;
+			flex-direction: row
+		}
+
+		.backgroundphoto{
+			width: 100vw;
+			margin-left: -0.6%;
+			display: flex;
+			flex-direction: row
+		}
+
+		.transparent{
+			border: solid 1px black;
+			float: right;
+		}
+
+		.header-image{
+			width: 100%;
+		}
+
+		.ourproducts{
+			text-align: center;
+			margin-top: 3%;
+			margin-bottom: 5%;
+		}
+
+		.box-align{
+			display: flex;
+			flex-direction: row
+
+		}
+
+		.photos{
+			height: 400px;
+			width: 400px;
+			border-radius: 10%;
+			border: solid 2px pink;
+			margin-left: 30%;
+			margin-bottom: 10%;
+
+
+		}
+
+		.second-box{
+			height: 400px;
+			width: 600px;
+			border-radius: 10%;
+			border: solid 2px pink;
+			margin-left: 15%;
+		}
+
+		.description {
+			margin-left: 4%;
+			font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		}
+
+		.testimonials{
+			text-align: center;
+			margin-top: 3%;
+			margin-bottom: 5%;
+			background-color: #F9DAE4;
+		}
+
+		.testimonial-flex{
+			display: flex;
+			flex-direction: row
+		}
+
+		.testimonial-box{
+			width: 540px;
+			height: 155px;
+			border: solid 2px white;
+			background-color: white;
+			margin: 0 auto;
+			margin-bottom: 1%;
+			font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		}
+
+		.testimonial-text{
+			width: 500px;
+			height: 125px;
+			margin: 0 auto;
+			margin-bottom: 3%;
+			font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		}
+
+		.test-title{
+			padding-top: 2%;
+			font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		}
+
+		.bottom-flex{
+			display: flex;
+			flex-direction: row;
+			background: #F9DAE4;
+			padding-top: 3%;
+		}
+
+		.newsletter{
+			width: 400px;
+			height: 300px;
+			border: solid 5px pink;
+			margin: 0 auto;
+			margin-left: 15%;
+			margin-top: 3%;
+			background-color: white;
+			font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		}
+
+		.contact-us{
+			width: 400px;
+			height: 500px;
+			margin: 0 auto;
+			margin-right: 15%;
+			font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		}
+
+		.newsletter-flex{
+			display: flex;
+			flex-direction: row;
+		}
+
+		.newsletter-email{
+			width: 250px;
+			height: 40px;
+			border: solid 1px black;
+			margin-left: 5%;
+			text-align: center;
+		}
+
+		.subscribe{
+			height: 40px;
+			width: 100px;
+			border: solid 1px black;
+			background-color: #F9DAE4;
+			text-align: center;
+		}
+
+		.move-right{
+			margin-left: 5%;
+		}
+
+		.center{
+			text-align: center;
+			font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		}
+
+		.gallery{
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+		}
+
+		.gallery-images{
+			display: inline-block;
+			height:33.33%;
+			width:33.33%;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class="flex_container">
+		<div class="title">The Baker's Candle Shop</div>
+		<div class="searchbar">
+			<img src="images/magnifying.png" class="searchicon"></img>
+		</div>
+		<div class="icons">
+			<div class="home">
+				<img src="images/home.png" class="dimensions"></img>
+			</div>
+			<div class="user">
+				<img src="images/user.png" class="dimensions"></img>
+			</div>
+			<div class="cart">
+				<img src="images/cart.png" class="dimensions"></img>
+			</div>
+		</div>
+	</div>
+
+	<div>
+		<img src="images/candier.png" class="header-image"></img>
+	</div>
+
+	<div class="ourproducts">
+		<h1> OUR PRODUCTS </h1>
+	</div>
+
+	<div class="productrow">
+		<div class="box-align">
+			<div>
+				<img src="images/bday.png" class="photos">
+			</div>
+			<div class="second-box">
+				<h1 class="description">Birthday Cake Candle</h1>
+				<p class="description">The Baker's Candle Shop</p>
+				<p class="description">$31</p>
+				<p class="description">Feed me cake and tell me I’m pretty! Girl, your birthday is gonna be so lit! Lay back, make a wish and hit the ultimate sugar high with notes of delicious gooey butter cream and candied vanilla (plus everything’s better with sprinkles!) xo</p>
+				<p class="description">Smells Like:</p>
+				<ol class="description">- Birthday Cake</ol>
+				<ol class="description">- Gooey Buttercream</ol>
+				<ol class="description">- Gourmand</ol>
+				<ol class="description">- Bourbon</ol>
+			</div>
+		</div>
+		<div class="box-align">
+			<div>
+				<img src="images/cereal.png" class="photos">
+			</div>
+			<div class="second-box">
+				<h1 class="description">Can't Adult Cereal Candle</h1>
+				<p class="description">The Baker's Candle Shop</p>
+				<p class="description">$31</p>
+				<p class="description">Remember when you were a kid and the most stressful thing in life was stealing out to go to that party? Now you're faking excuses to avoid going out, and eating cereal on the couch. Adulting is overrated! xo</p>
+				<p class="description">Smells Like:</p>
+				<ol class="description">- Fruit Loops</ol>
+				<ol class="description">- Cereal Milk</ol>
+				<ol class="description">- Citrus</ol>
+				<ol class="description">- Grapefruit</ol>
+			</div>
+		</div>
+		<div class="box-align">
+			<div>
+				<img src="images/donut.png" class="photos">
+			</div>
+			<div class="second-box">
+				<h1 class="description">Donut Worry Candle</h1>
+				<p class="description">The Baker's Candle Shop</p>
+				<p class="description">$31</p>
+				<p class="description">Babe, don't stress the small stuff, but definitely enjoy the little things in life. Like this adorable glazed donut candle, covered in sprinkles! Light it up, relax, and forget about your troubles. Honey, todays a great day to be happy! xo</p>
+				<p class="description">Smells Like:</p>
+				<ol class="description">- Strawberry Cream</ol>
+				<ol class="description">- Frosted Donut</ol>
+				<ol class="description">- Citrus Sugar</ol>
+				<ol class="description">- Vanilla</ol>
+			</div>
+		</div>
+		<div class="box-align">
+			<div>
+				<img src="images/icecream.png" class="photos">
+			</div>
+			<div class="second-box">
+				<h1 class="description">Love You Ice Cream Candle</h1>
+				<p class="description">The Baker's Candle Shop</p>
+				<p class="description">$31</p>
+				<p class="description">Everyone needs a cutie like you to laugh with, cuddle up to, and make really bad decisions with. We’re like a tiny (but mighty) little gang. If you haven’t noticed already, I think you’re pretty cool. Honey, honestly, you complete me xo</p>
+				<p class="description">Smells Like:</p>
+				<ol class="description">- Soft Serve Ice Cream</ol>
+				<ol class="description">- Smooth Buttercream</ol>
+				<ol class="description">- Gourmand</ol>
+				<ol class="description">- Vanilla</ol>
+			</div>
+		</div>
+	</div>
+
+	<div class="testimonials">
+		<h1 class="test-title"> TESTIMONIALS </h1>
+		<div class="testimonial-flex">
+			<div class="testimonial-box">
+				<p>"They literally last so long and</p>
+				<p>fills the whole room with fresh</p>
+				<p>buttery scents!"</p>
+			</div>
+			<div class="testimonial-box">
+				<p>"The perfect gift for any</p>
+				<p>occasion. Plus they smell like a</p>
+				<p>bakery shop"</p>
+			</div>
+		</div>
+		<div class="testimonial-flex">
+			<div class="testimonial-text">
+				<h2>Laurensia Charlene</h2>
+				<p>New York</p>
+			</div>
+			<div class="testimonial-text">
+				<h2>Chloe Cozzens</h2>
+				<p>Boston</p>
+			</div>
+		</div>
+		<div class="testimonial-flex">
+			<div class="testimonial-box">
+				<p>"Bought the ice cream candle for</p>
+				<p>Secret Santa. The whole room</p>
+				<p>lit up!"</p>
+			</div>
+			<div class="testimonial-box">
+				<p>"Just repurchased the Donut</p>
+				<p>candle. My personal favorite!!!"</p>
+			</div>
+		</div>
+		<div class="testimonial-flex">
+			<div class="testimonial-text">
+				<h2>Dorothy Wang</h2>
+				<p>Maryland</p>
+			</div>
+			<div class="testimonial-text">
+				<h2>Izzy Santiago</h2>
+				<p>Los Angeles</p>
+			</div>
+		</div>
+	</div>
+
+	<p class="center">Shop our instagram. Follow us @thebakerscandleshop</p>
+	<div>
+		<div class="gallery">
+			<img src="images/image1.png" class="gallery-images">
+			<img src="images/image2.png" class="gallery-images">
+			<img src="images/image3.png" class="gallery-images">
+		</div>
+		<div class="gallery">
+			<img src="images/image4.png" class="gallery-images">
+			<img src="images/image5.png" class="gallery-images">
+			<img src="images/image6.png" class="gallery-images">
+		</div>
+	</div>
+
+	<div class="bottom-flex">
+		<div class="newsletter">
+			<p class="move-right">Newsletter Sign Up</p>
+			<p class="move-right">The Baker's Candle Shop</p>
+			<div class="newsletter-flex">
+				<div class="newsletter-email">
+					<p class="center-vertical">Enter Email Address</p>
+			</div>
+				<div class="subscribe">
+					<p class="center-vertical">Subscribe</p>
+				</div>
+			</div>
+		</div>
+		<div class="contact-us">
+			<h1>Contact Us</h1>
+			<p>Address:</p>
+			<h2>7 E 12th Street</h2>
+			<h2>New York, NY 10003</h2>
+
+			<p>Phone:</p>
+			<h2>646-415-2622</h2>
+
+			<p>Email:</p>
+			<h2>admin@thebakerscandleshop.com</h2>
+			<h2>support@thebakerscandleshop.com</h2>
+			<h2>sales@thebakerscandleshop.com</h2>
+
+			<p>The Baker's Candle Shop</p>
+		</div>
+	</div>
+
+	
+
+</body>
+</html>
